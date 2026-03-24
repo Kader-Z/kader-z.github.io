@@ -760,92 +760,56 @@ menuitem > menu > menuitem.hover > menu > menuitem{
 
 
 /*               button start                 */
-$length: 672.1px;
-$length-half: $length / 2;
-$length-third: $length / 3;
-$length-two-thirds: $length-third * 2;
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
 
-.Button {
-  background: none;
-  padding: 0;
-  margin: 50px auto;
-  border: none;
-  display: block;
-  backface-visibility: hidden;
-  width: 300px;
-  height: 80px;
-  position: relative;
-  color: #98A5A6;
-  font-size: 18px;
-  transition: transform 300ms, color 300ms;
+button {
+  width: 150px;
+  height: 50px;
   cursor: pointer;
-} 
-
-.Button:hover,
-.Button:focus {
-  color: #BEC3C7;
-  transform: scale(1.05);
-  
-  .Button-line {
-    animation-play-state: paused;
-  }
+  background: #333;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+  color: #222;
+  font-size: 16px;
 }
 
-.Button-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%; 
+button:hover {
+  box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+  font-size: 15px;
+  transition: 500ms;
 }
 
-@keyframes outer-dashoffset {
-  0% {
-    stroke-dashoffset: 0;
-    stroke-dasharray: $length-half $length-half;
-  }
-  50% {
-    stroke-dasharray: $length-third $length-two-thirds;
-  }
-  100% {
-    stroke-dashoffset: $length;
-    stroke-dasharray: $length-half $length-half;
-  }
+button:focus {
+  outline: none;
 }
 
-.Button-line--outer {
-  stroke-dasharray: $length-half $length-half;
-  stroke-dashoffset: 0;
-  animation: outer-dashoffset infinite linear 6s;
+.red:hover {
+  color: #f07171;
+  text-shadow: 0px 0px 10px #f07171;
 }
 
-@keyframes inner-dashoffset {
-  0% {
-    stroke-dashoffset: 0;
-    stroke-dasharray: $length-half $length-half;
-  }
-  50% {
-    stroke-dasharray: $length-third $length-two-thirds;
-  }
-  100% {
-    stroke-dashoffset: -$length;
-    stroke-dasharray: $length-half $length-half;
-  }
+.green:hover {
+    color: #93f071;
+  text-shadow: 0px 0px 10px #93f071;
 }
 
-.Button-line--inner {
-  stroke-dashoffset: 0;
-  stroke-dasharray: $length-half $length-half;
-  animation: inner-dashoffset infinite 5s;
+.blue:hover {
+  color: #71b7f0;
+  text-shadow: 0px 0px 10px #71b7f0;
 }
 
-.Button-content {
-  width: 100%;
-  height: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
+.purple:hover {
+  color: #b971f0;
+  text-shadow: 0px 0px 10px #b971f0;
 }
 /*               button  end                     */
