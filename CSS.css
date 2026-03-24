@@ -844,7 +844,7 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-button2 {
+button {
   width: 150px;
   height: 50px;
   cursor: pointer;
@@ -857,13 +857,13 @@ button2 {
   font-size: 16px;
 }
 
-button2:hover {
+button:hover {
   box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
   font-size: 15px;
   transition: 500ms;
 }
 
-button2:focus {
+button:focus {
   outline: none;
 }
 
