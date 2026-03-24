@@ -1,0 +1,291 @@
+/* style.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.content {
+    position: relative;
+}
+
+.background-div {
+    background-image: url('GIF/58.gif');
+    background-size: cover; /* Adjust as needed */
+    /* Other background properties can be added here */
+}
+
+
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 rows */
+    gap: 30px; /* Adjust as needed */
+    margin: 50px; /* 100px margin on all sides */
+    border: 5px solid rgba(0, 0, 255, 0.8); /* Transparent blue border */
+    padding: 20px; /* Add some padding to the big grid */
+    background-color: rgba(0, 0, 255, 0.2); /* Adjust the alpha value (0 to 1) to change the transparency */
+}
+
+
+
+/* Adjust width as needed */
+/* .grid-button {
+
+	width: 100%; 
+    height: 25px; Adjust height as needed
+    border: 4px solid red;
+    background-color: none;
+    text-align: center;
+    line-height: calc((100% - 150px) / 6);
+	
+
+} */
+
+
+.grid-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr auto;
+    gap: 25px;
+    border: 3px solid rgba(128, 0, 128, 0.8); /* Transparent purple border */
+    padding: 8%; /* Adjust padding as needed */
+    margin: 5px; /* Add margin to adjust the spacing */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 0, 128, 0.2);
+    border-radius: 10px;
+}
+
+
+.grid-title {
+    font-size: 20px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the title bold */
+    text-align: center; /* Center align the title */
+    grid-column: 1 / -1; /* Span all columns */
+    margin: -30px 0 -30px 0; /* Adjust margin */
+    padding: 0; /* Reset padding */	
+}
+
+.loaded {
+    background-color: #7cfc00 !important;
+}
+
+
+.btn_blue,
+.btn-yellow,
+.btn-red,
+.btn-silver,
+.button_plum,
+.button_slateblue,
+.button_green,
+.button_gray,
+.button_khaki,
+.button_gold,
+.button_aqua,
+.button_purple {
+    width: 90px;
+    height: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+    .button_green:hover {
+        background-color: #7cfc00;
+        box-shadow: 0px 15px 20px rgba(124,252,0, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+    .btn-red:hover {
+        background-color: #ff0000;
+        box-shadow: 0px 15px 20px rgba(255,0,0, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+    .button_khaki:hover {
+        background-color: #f0e68c;
+        box-shadow: 0px 15px 20px rgba(240,230,140, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+    .button_gold:hover {
+        background-color: #ffd700;
+        box-shadow: 0px 15px 20px rgba(255,215,0, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+    .button_purple:hover {
+        background-color: #ff00ff;
+        box-shadow: 0px 15px 20px rgba(255,0,255, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+    .btn-yellow:hover {
+        background-color: #ffff00;
+        box-shadow: 0px 15px 20px rgba(255,255,0, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+    .button_aqua:hover {
+        background-color: #00ffff;
+        box-shadow: 0px 15px 20px rgba(0,255,255, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+    .button_gray:hover {
+        background-color: #C0C0C0;
+        box-shadow: 0px 15px 20px rgba(112,128,144, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+	.button_slateblue:hover {
+		background-color: #7b68ee;
+		box-shadow: 0px 15px 20px rgba(123,104,238, 0.4);
+		color: #fff;
+		transform: translateY(-7px);
+	}
+
+	.button_plum:hover {
+		background-color: #dda0dd;
+		box-shadow: 0px 15px 20px rgba(221,160,221, 0.4);
+		color: #fff;
+		transform: translateY(-7px);
+	}
+
+	.btn-silver:hover {
+		background-color: #C0C0C0;
+		box-shadow: 0px 15px 20px rgba(192,192,192, 0.4);
+		color: #fff;
+		transform: translateY(-7px);
+	}
+	
+	.btn_blue:hover {
+		background-color: rgba(0, 0, 255, 0.6); /* Transparent blue border */
+		box-shadow: 0px 15px 20px rgba(0, 0, 255, 0.4);
+		color: #fff;
+		transform: translateY(-7px);
+    }
+	
+	
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	padding-top: 60px;
+}
+
+/* Style for the modal content */
+
+
+.modal-content {
+    background-color: rgba(144, 238, 144, 0.9); /* Change background color Green*/
+    padding: 20px; /* Add padding */
+    border-radius: 60px; /* Add border radius for rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    font-size: 16px; /* Increase font size */
+    text-align: center; /* Center-align text */
+}
+
+
+/* Style for the close button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+	
+.glow-on-hover {
+    width: 90px;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 45px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 20px;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+	
