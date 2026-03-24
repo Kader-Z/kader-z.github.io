@@ -763,7 +763,7 @@ menuitem > menu > menuitem.hover > menu > menuitem{
 .button {
   position: relative;
   width: 180px;
-  height: 60px;
+  height: 50px;
   background-color: #000;
   display: flex;
   align-items: center;
@@ -785,7 +785,7 @@ menuitem > menu > menuitem.hover > menu > menuitem{
   top: -1px;
   margin: auto;
   width: 188px;
-  height: 68px;
+  height: 58px;
   border-radius: 10px;
   background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
   z-index: -10;
