@@ -823,7 +823,7 @@ menuitem > menu > menuitem.hover > menu > menuitem{
   padding: 0;
   box-sizing: border-box;
 }
-/*                             */ 
+/*                           
 body {
   height: 100vh;
   overflow: hidden;
@@ -833,7 +833,7 @@ body {
   justify-content: center;
   background: #333;
 }
-
+  */ 
 .noselect {
   -webkit-touch-callout: none;
     -webkit-user-select: none;
