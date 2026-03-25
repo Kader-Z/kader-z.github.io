@@ -13,7 +13,7 @@
 	}
 	
 	var i = 0;
-	var GIF_ims = 73;
+	var GIF_ims = 93;
 	var JPGcount = 0;
 	var Y = 0;
 	var  JPG_ims = 162;
