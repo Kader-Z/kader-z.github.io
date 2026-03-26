@@ -126,29 +126,20 @@ function openCodePen() {
 
 
 function loadExcel() {
-    var fileInput = document.getElementById('fileInput');
+  fetch("Worsfold_students.xlsx")   // make sure name is EXACT
+    .then(res => res.arrayBuffer())
+    .then(data => {
+      const workbook = XLSX.read(data, { type: "array" });
+      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+      const html = XLSX.utils.sheet_to_html(sheet);
 
-    if (fileInput.files.length === 0) {
-        alert("Please load a file first");
-        return;
-    }
+      document.getElementById("excelTable").innerHTML =
+        "<h2>--- Student Login ---</h2>" + html;
 
-    var file = fileInput.files[0];
-    var reader = new FileReader();
-
-    reader.onload = function(e) {
-        var data = new Uint8Array(e.target.result);
-        var workbook = XLSX.read(data, { type: 'array' });
-        var sheet = workbook.Sheets[workbook.SheetNames[0]];
-        var html = XLSX.utils.sheet_to_html(sheet);
-
-        // Put inside modal (same as Show button style)
-        document.getElementById("excelTable").innerHTML =
-            "<h2>--- Student Login ---</h2>" + html;
-
-        // Show modal
-        document.getElementById("myModal").style.display = "block";
-    };
-
-    reader.readAsArrayBuffer(file);
+      document.getElementById("myModal").style.display = "block";
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Excel file not found or path incorrect");
+    });
 }
