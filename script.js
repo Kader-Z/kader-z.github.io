@@ -95,7 +95,7 @@ function handleFileInputChange() {
 		console.log("No file selected");
 		return;
 	}
-
+openModal();
 	// Change button color
 	loadButton.style.backgroundColor = '#ffd700';
 }
