@@ -15,24 +15,10 @@
 <body>
 
 
-    <script>
-        // Run the Python HTTP server command when the page loads
-        window.onload = function() {
-            // Use backticks for multi-line strings
-            const { exec } = require('child_process');
-            exec('python -m http.server', (error, stdout, stderr) => {
-                if (error) {
-                    console.error(`exec error: ${error}`);
-                    return;
-                }
-                console.log(`stdout: ${stdout}`);
-                console.error(`stderr: ${stderr}`);
-            });
-        };
-    </script>
 
-<!--     <select id="dropdown"></select>
-    <input type="file" id="fileInput" accept=".xlsx" > -->
+
+<select id="dropdown"></select>
+    <input type="file" id="fileInput" accept=".xlsx" >
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -158,10 +144,7 @@
 
     </div>
 
-	
-    <script>
-  <script src="script.js"></script>
-    </script>
+	 <script src="script.js"></script>
 	
 </body>
 </html>
