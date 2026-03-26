@@ -130,8 +130,17 @@ function loadExcel() {
     .then(data => {
       const workbook = XLSX.read(data, { type: "array" });
       const sheet = workbook.Sheets[workbook.SheetNames[0]];
+      const html = XLSX.utils.sheet_to_html(sheet);
 
-      document.getElementById("excelOutput").innerHTML =
-        XLSX.utils.sheet_to_html(sheet);
+      // Put table inside modal
+      document.getElementById("excelTable").innerHTML =
+        "<h2>--- Student Login ---</h2>" + html;
+
+      // Show modal
+      document.getElementById("myModal").style.display = "block";
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Could not load Excel file");
     });
 }
