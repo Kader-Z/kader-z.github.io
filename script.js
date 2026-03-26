@@ -119,3 +119,15 @@ function openFileInput() {
 function openCodePen() {
     window.open('https://codepen.io/pen', '_blank');
 }
+
+
+function loadExcel() {
+  fetch("Worsfold students.xlsx")
+    .then(res => res.arrayBuffer())
+    .then(data => {
+      const workbook = XLSX.read(data, { type: "array" });
+      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+      document.getElementById("output").innerHTML =
+        XLSX.utils.sheet_to_html(sheet);
+    });
+}
