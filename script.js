@@ -122,7 +122,7 @@ function openCodePen() {
 
 
 function loadExcel() {
-  fetch("Worsfold students.xlsx")
+  fetch("Worsfold_students.xlsx")
     .then(res => res.arrayBuffer())
     .then(data => {
       const workbook = XLSX.read(data, { type: "array" });
