@@ -101,13 +101,11 @@ function handleFileInputChange() {
 }
 
 // Add event listener to file input element
+var fileInput = document.getElementById('fileInput');
+
 fileInput.addEventListener('change', function() {
     handleFileInputChange.call(this);
-    loadExcel(); // now works correctly
 });
-
-});
-
 
 // Function to close the modal
 function closeModal() {
