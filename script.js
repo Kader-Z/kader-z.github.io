@@ -127,7 +127,8 @@ function loadExcel() {
     .then(data => {
       const workbook = XLSX.read(data, { type: "array" });
       const sheet = workbook.Sheets[workbook.SheetNames[0]];
-      document.getElementById("output").innerHTML =
+
+      document.getElementById("excelOutput").innerHTML =
         XLSX.utils.sheet_to_html(sheet);
     });
 }
