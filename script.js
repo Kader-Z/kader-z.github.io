@@ -101,10 +101,14 @@ function handleFileInputChange() {
 }
 
 // Add event listener to file input element
-var fileInput = document.getElementById('fileInput');
+document.addEventListener("DOMContentLoaded", function () {
+    var fileInput = document.getElementById('fileInput');
 
-fileInput.addEventListener('change', function() {
-    handleFileInputChange.call(this);
+    if (fileInput) {
+        fileInput.addEventListener('change', function() {
+            handleFileInputChange.call(this);
+        });
+    }
 });
 
 // Function to close the modal
