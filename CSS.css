@@ -876,6 +876,7 @@ menuitem > menu > menuitem.hover > menu > menuitem{
 
 /* CENTERED POPUP BOX */
 .modal-content {
+    position: relative;  /* add this line */
     background: white;
     margin: 5% auto;
     padding: 20px;
@@ -886,7 +887,6 @@ menuitem > menu > menuitem.hover > menu > menuitem{
     box-shadow: 0 0 20px black;
 }
 
-/* CLOSE BUTTON */
 /* CLOSE BUTTON */
 .close {
     position: absolute; /* relative to modal-content */
