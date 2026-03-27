@@ -853,3 +853,34 @@ menuitem > menu > menuitem.hover > menu > menuitem{
     transition: 0.2s;
 }
 
+/* FULL SCREEN DARK BACKGROUND */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.7);
+}
+
+/* CENTERED POPUP BOX */
+.modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 20px;
+    width: 85%;
+    max-height: 85%;
+    overflow: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+}
+
+/* CLOSE BUTTON */
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+    font-weight: bold;
+}
