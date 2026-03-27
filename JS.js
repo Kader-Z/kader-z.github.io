@@ -53,4 +53,21 @@
       : 'Shared Variable not set';
     }
 
+function loadExcel() {
+  fetch("Worsfold_students.xlsx")   // make sure name is EXACT
+    .then(res => res.arrayBuffer())
+    .then(data => {
+      const workbook = XLSX.read(data, { type: "array" });
+      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+      const html = XLSX.utils.sheet_to_html(sheet);
 
+      document.getElementById("excelTable").innerHTML =
+        "<h2>--- Student Login ---</h2>" + html;
+
+      document.getElementById("myModal").style.display = "block";
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Excel file not found or path incorrect");
+    });
+}
