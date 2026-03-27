@@ -53,6 +53,10 @@
       : 'Shared Variable not set';
     }
 
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
 function loadExcel() {
   fetch("Worsfold_students.xlsx")   // make sure file name is EXACT
     .then(res => res.arrayBuffer())
