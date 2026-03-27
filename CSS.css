@@ -889,7 +889,7 @@ menuitem > menu > menuitem.hover > menu > menuitem{
 /* CLOSE BUTTON */
 /* CLOSE BUTTON */
 .close {
-    position: fixed; /* stays visible on scroll */
+    position: absolute; /* relative to modal-content */
     top: 10px;       /* distance from top of viewport */
     right: 10px;     /* distance from right of viewport */
     font-size: 28px;
