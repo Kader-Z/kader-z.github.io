@@ -888,6 +888,7 @@ menuitem > menu > menuitem.hover > menu > menuitem{
 
 /* CLOSE BUTTON */
 .close {
+	position: fixed; /* stays visible on scroll */
     float: right;
     font-size: 28px;
     cursor: pointer;
