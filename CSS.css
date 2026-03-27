@@ -819,15 +819,17 @@ menuitem > menu > menuitem.hover > menu > menuitem{
 #excelTable table {
     border-collapse: collapse;
     width: 100%;
-    font-family: Arial, sans-serif;
-    background-color: white;
+    font-family: 'Segoe UI', sans-serif;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-/* Header row */
+/* Header */
 #excelTable th {
-    background-color: #4CAF50;
+    background: linear-gradient(45deg, #4CAF50, #2e7d32);
     color: white;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
     font-size: 14px;
 }
@@ -835,26 +837,19 @@ menuitem > menu > menuitem.hover > menu > menuitem{
 /* Cells */
 #excelTable td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
     text-align: center;
     font-size: 13px;
 }
 
-/* Zebra stripes */
+/* Zebra */
 #excelTable tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
 }
 
-/* Hover effect */
+/* Hover */
 #excelTable tr:hover {
-    background-color: #ddd;
+    background-color: #e0f2f1;
+    transition: 0.2s;
 }
-
-/* Title */
-#excelTable h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    color: #333;
-}
-
 
