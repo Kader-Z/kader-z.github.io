@@ -889,12 +889,15 @@ menuitem > menu > menuitem.hover > menu > menuitem{
 
 /* CLOSE BUTTON */
 .close {
-    position: absolute; /* relative to modal-content */
-    top: 10px;       /* distance from top of viewport */
-    right: 10px;     /* distance from right of viewport */
+    position: sticky;  /* sticks inside modal */
+    top: 0;            /* distance from top of modal-content */
+    right: 10px;
     font-size: 28px;
-    cursor: pointer;
     font-weight: bold;
-    background: transparent; /* optional */
-    border: none;            /* optional */
+    cursor: pointer;
+    background: white; /* match modal background */
+    float: right;
+    text-align: right;
+    padding: 5px;
+    z-index: 10;       /* stays above table */
 }
