@@ -815,6 +815,46 @@ menuitem > menu > menuitem.hover > menu > menuitem{
   scale: 0.7;
 }
 
+/* Excel Table Styling */
+#excelTable table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
 
+/* Header row */
+#excelTable th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Cells */
+#excelTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* Zebra stripes */
+#excelTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect */
+#excelTable tr:hover {
+    background-color: #ddd;
+}
+
+/* Title */
+#excelTable h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
 
 
