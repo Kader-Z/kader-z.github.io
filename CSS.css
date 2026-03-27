@@ -825,6 +825,15 @@ menuitem > menu > menuitem.hover > menu > menuitem{
     overflow: hidden;
 }
 
+#excelTable h2 {
+    text-align: center;
+    margin: 15px 0;
+    color: white;
+    background: #333;
+    padding: 10px;
+    border-radius: 6px;
+}
+
 /* Header */
 #excelTable th {
     background: linear-gradient(45deg, #4CAF50, #2e7d32);
