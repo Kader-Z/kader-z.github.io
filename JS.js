@@ -57,6 +57,13 @@ function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }
 
+window.onclick = function(event) {
+  const modal = document.getElementById("myModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+
 function loadExcel() {
   fetch("Worsfold_students.xlsx")   // make sure file name is EXACT
     .then(res => res.arrayBuffer())
