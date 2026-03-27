@@ -54,20 +54,43 @@
     }
 
 function loadExcel() {
-  fetch("./Worsfold_students.xlsx")
+  fetch("Worsfold_students.xlsx")   // make sure file name is EXACT
     .then(res => res.arrayBuffer())
     .then(data => {
       const workbook = XLSX.read(data, { type: "array" });
       const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
-      let html = XLSX.utils.sheet_to_html(sheet);
+      // Convert sheet to JSON (cleaner than sheet_to_html)
+      const json = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
-      // 🔥 Convert first row to header
-      html = html.replace(/<td/g, "<th").replace(/<\/td>/g, "</th>");
+      // Build custom HTML table
+      let html = "<h2>--- Student Login ---</h2>";
+      html += "<table>";
 
-      document.getElementById("excelTable").innerHTML =
-        "<h2>--- Student Login ---</h2>" + html;
+      json.forEach((row, i) => {
+        html += "<tr>";
 
+        row.forEach(cell => {
+          if (i === 0) {
+            html += `<th>${cell || ""}</th>`;  // header row
+          } else {
+            html += `<td>${cell || ""}</td>`;  // normal cells
+          }
+        });
+
+        html += "</tr>";
+      });
+
+      html += "</table>";
+
+      // Insert into modal
+      document.getElementById("excelTable").innerHTML = html;
+
+      // Show modal
       document.getElementById("myModal").style.display = "block";
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Excel file not found or path incorrect");
     });
 }
