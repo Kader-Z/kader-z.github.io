@@ -887,10 +887,14 @@ menuitem > menu > menuitem.hover > menu > menuitem{
 }
 
 /* CLOSE BUTTON */
+/* CLOSE BUTTON */
 .close {
-	position: fixed; /* stays visible on scroll */
-    float: right;
+    position: fixed; /* stays visible on scroll */
+    top: 10px;       /* distance from top of viewport */
+    right: 10px;     /* distance from right of viewport */
     font-size: 28px;
     cursor: pointer;
     font-weight: bold;
+    background: transparent; /* optional */
+    border: none;            /* optional */
 }
