@@ -54,20 +54,20 @@
     }
 
 function loadExcel() {
-  fetch("Worsfold_students.xlsx")   // make sure name is EXACT
+  fetch("./Worsfold_students.xlsx")
     .then(res => res.arrayBuffer())
     .then(data => {
       const workbook = XLSX.read(data, { type: "array" });
       const sheet = workbook.Sheets[workbook.SheetNames[0]];
-      const html = XLSX.utils.sheet_to_html(sheet);
+
+      let html = XLSX.utils.sheet_to_html(sheet);
+
+      // 🔥 Convert first row to header
+      html = html.replace(/<td/g, "<th").replace(/<\/td>/g, "</th>");
 
       document.getElementById("excelTable").innerHTML =
         "<h2>--- Student Login ---</h2>" + html;
 
       document.getElementById("myModal").style.display = "block";
-    })
-    .catch(err => {
-      console.error(err);
-      alert("Excel file not found or path incorrect");
     });
 }
