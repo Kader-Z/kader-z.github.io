@@ -127,21 +127,52 @@ function openCodePen() {
 }
 
 
+
+//function loadExcel() {
+//  fetch("./Worsfold_students.xlsx")
+//    .then(res => res.arrayBuffer())
+//    .then(data => {
+//      const workbook = XLSX.read(data, { type: "array" });
+//      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+
+//      let html = XLSX.utils.sheet_to_html(sheet);
+
+//      // 🔥 Convert first row to header
+//      html = html.replace(/<td/g, "<th").replace(/<\/td>/g, "</th>");
+
+//      document.getElementById("excelTable").innerHTML =
+//        "<h2>--- Student Login ---</h2>" + html;
+
+//      document.getElementById("myModal").style.display = "block";
+//    });
+//}
+
 function loadExcel() {
-  fetch("./Worsfold_students.xlsx")
-    .then(res => res.arrayBuffer())
-    .then(data => {
-      const workbook = XLSX.read(data, { type: "array" });
-      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+    fetch("./Worsfold_students.xlsx")
+        .then(res => res.arrayBuffer())
+        .then(data => {
 
-      let html = XLSX.utils.sheet_to_html(sheet);
+            const workbook = XLSX.read(data, {
+                type: "array"
+            });
 
-      // 🔥 Convert first row to header
-      html = html.replace(/<td/g, "<th").replace(/<\/td>/g, "</th>");
+            const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
-      document.getElementById("excelTable").innerHTML =
-        "<h2>--- Student Login ---</h2>" + html;
+            let html = XLSX.utils.sheet_to_html(sheet);
 
-      document.getElementById("myModal").style.display = "block";
-    });
+            // Add our own class to the generated Excel table
+            html = html.replace(
+                "<table",
+                '<table class="student-login-table"'
+            );
+
+            document.getElementById("excelTable").innerHTML =
+                "<h2>--- Student Login ---</h2>" + html;
+
+            document.getElementById("myModal").style.display = "block";
+        })
+        .catch(error => {
+            console.error("Error loading Excel file:", error);
+            alert("Could not load Worsfold_students.xlsx");
+        });
 }
