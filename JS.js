@@ -65,28 +65,33 @@ window.onclick = function(event) {
 }
 
 function loadExcel() {
-  fetch("Worsfold_students.xlsx")   // make sure file name is EXACT
+  fetch("Worsfold_students.xlsx")
     .then(res => res.arrayBuffer())
     .then(data => {
+
       const workbook = XLSX.read(data, { type: "array" });
       const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
-      // Convert sheet to JSON (cleaner than sheet_to_html)
+      // Convert Excel sheet to JSON
       const json = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
       // Build custom HTML table
-      let html = "<h2>--- Student Login ---</h2>";
-      html += "<table>";
+      let html = "<h2 class='student-login-title'>--- Student Login ---</h2>";
+
+      html += "<table class='student-login-table'>";
 
       json.forEach((row, i) => {
+
         html += "<tr>";
 
         row.forEach(cell => {
+
           if (i === 0) {
-            html += `<th>${cell || ""}</th>`;  // header row
+            html += `<th>${cell || ""}</th>`;
           } else {
-            html += `<td>${cell || ""}</td>`;  // normal cells
+            html += `<td>${cell || ""}</td>`;
           }
+
         });
 
         html += "</tr>";
@@ -94,7 +99,7 @@ function loadExcel() {
 
       html += "</table>";
 
-      // Insert into modal
+      // Insert table into modal
       document.getElementById("excelTable").innerHTML = html;
 
       // Show modal
